@@ -14,7 +14,7 @@ async function showData(pathToFolder) {
       let nameWithoutExt = nameWithExt.split('.')[0];
       let extWithoutDot = path.extname(nameWithExt).slice(1);
       // let sizeFile = 
-      fsProm.stat(path.join(pathToFolder, nameWithExt)).then(sizeFile => console.log(`${nameWithoutExt}-${extWithoutDot}-${sizeFile.size}`));
+      fsProm.stat(path.join(pathToFolder, nameWithExt)).then(sizeFile => console.log(`${nameWithoutExt} - ${extWithoutDot} - ${sizeFile.size} bytes`));
     };
   })
 };
