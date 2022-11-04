@@ -22,7 +22,7 @@ async function keepTalking() {
     });
   }  
   catch(error) {
-    console.log('error');
+    console.log('error in 2 task');
   }
 }
 keepTalking()

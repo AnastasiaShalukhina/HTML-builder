@@ -10,7 +10,7 @@ async function readData() {
 });
   }
   catch(error) {
-    console.log('error');
+    console.log('error in 1 task');
   }
 }
 readData()

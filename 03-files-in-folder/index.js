@@ -6,7 +6,8 @@ const pathToFolder = path.join(__dirname, "secret-folder");
 
 
 async function showData(pathToFolder) {
-  const filesData = await fsProm.readdir(pathToFolder, {withFileTypes: true}); 
+  try {
+    const filesData = await fsProm.readdir(pathToFolder, {withFileTypes: true}); 
   
   filesData.forEach((file) => {
     if(file.isFile()) {
@@ -17,5 +18,10 @@ async function showData(pathToFolder) {
       fsProm.stat(path.join(pathToFolder, nameWithExt)).then(sizeFile => console.log(`${nameWithoutExt} - ${extWithoutDot} - ${sizeFile.size} bytes`));
     };
   })
+  }
+  catch(error) {
+    console.log('error of 3 task')
+  }
+  
 };
 showData(pathToFolder);
