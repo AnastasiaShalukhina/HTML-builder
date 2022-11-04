@@ -10,7 +10,7 @@ async function copyDirectory() {
   const filesData = await fsProm.readdir(pathToFolderCopyFrom);
   
   filesData.forEach((file) => {
-    fsProm.copyFile(`${pathToFolderCopyFrom}\\${file}`, `${pathToFolderCopyTo}\\${file}`);
+    fsProm.copyFile(path.join(pathToFolderCopyFrom, file), path.join(pathToFolderCopyTo, file));
   })
 };
 copyDirectory();
